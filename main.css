@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --dark-gray: hsl(0, 0%, 59%);
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Kumbh Sans", sans-serif;
+  color: var(--dark-gray);
+}
+
+.main {
+  height: 100vh;
+  /* I discovered some calc magic to make the top svg responsive. I'm pumped at the discovery but there's probably a more efficient way to skip media queries. */
+  background: url(./images/bg-pattern-top.svg) calc((50vw - 100vh)) -50vh no-repeat,
+    url(./images/bg-pattern-bottom.svg) 50vw 50vh no-repeat var(--dark-cyan);
+  background-size: auto 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold,
+h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+
+.regular {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.color-light {
+  color: var(--dark-gray);
+}
+
+.card {
+  width: 32rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 14px 28px hsl(185deg 90% 18% / 31%),
+    0 10px 10px rgb(25 162 174 / 19%);
+
+  overflow: hidden;
+}
+
+.card__banner {
+  background: url("./images/bg-pattern-card.svg");
+  height: 12rem;
+  width: auto;
+}
+
+.card__details {
+  padding: 1rem;
+  width: 100%;
+}
+
+hr {
+  display: block;
+  margin: 0.5rem 0;
+  border: 0;
+  height: 1px;
+  background-color: #efefef;
+  width: 100%;
+}
+
+.bio {
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.person-image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: solid 0.5rem #fff;
+  overflow: hidden;
+  margin-top: -6rem;
+  align-self: center;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  letter-spacing: 0.02rem;
+}
+
+.attribution {
+  color: #fff;
+  letter-spacing: 0.02rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.attribution a {
+  color: hsl(56, 100%, 62%);
+  text-decoration: none;
+  border-bottom: 1px solid hsl(56, 100%, 62%);
+  padding: 0.2rem;
+  padding-top: 0.4rem;
+  transition: all 0.2s ease-in;
+}
+
+.attribution a:hover,
+.attribution a:focus,
+.attribution a:focus-visible {
+  color: hsl(53, 33%, 11%);
+  background-color: hsl(66, 100%, 60%);
+  border-bottom: 1px solid hsl(53, 33%, 11%);
+}
